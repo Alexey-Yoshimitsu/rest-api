@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-
-    "dev":"nodemon index.js",
-    "devorm":"nodemon orm.js",
-    "start":"node index.js"
+    "dev": "nodemon index.js",
+    "devorm": "nodemon orm.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0",
     "nodemon": "^2.0.22",
-    "typeorm": "^0.3.12"
+    "typeorm": "^0.3.12",
+    "uuid": "^9.0.0"
   }
 }
