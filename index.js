@@ -60,19 +60,40 @@ app.get("/api-auth",(req,res)=>{
   //const result = CreateSelectQuery(count=1)
   //let cookie = res.cookies;
   let answer ={
-    id:1,
-    
-    email
+    "id":1,
+    "email":"shandov466@gmail.com",
+    "password":1234,
+    "token":"09884266-5cfc-4363-8959-73e84da144af",
+    "isAdmin":1,
+    "isAuth":0
   }
 
 
   let email = req.body.email
   let password = req.body.password
+  console.log(email+ "    ----- email")
+  console.log(password+ "    ----- password")
   //let answer = connection('SELECT `id`, `email`, `password`, `token` FROM `users` WHERE `email`="shandov466@gmail.com"')
-
+  if(email == answer.email){
+    
+    if(password==answer.password){
+      res.cookie('token', '09884266-5cfc-4363-8959-73e84da144af', { expires: new Date(Date.now() + 900000), httpOnly: true })
+      res.json({"status":"sucess auth"})
+      res.redirect("/api")
+    }
+    else{
+      res.json({"Validation error":"password incorrect"})
+    }
+  }else{
+    res.json(
+      {
+        "Validation error":"user not found"
+      }
+    )
+  }
 
   //if(req.body.email == )
-  res.json({email:email, password: password})
+  //res.json({email:email, password: password})
   
 })
 
